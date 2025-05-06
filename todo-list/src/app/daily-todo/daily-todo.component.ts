@@ -9,5 +9,11 @@ import { todos } from '../todos';
   styleUrl: './daily-todo.component.css'
 })
 export class DailyTodoComponent {
-  todos = todos;
+  todo = todos[this.getNewRandomTodo()];
+
+  getNewRandomTodo() {
+    const todo = Math.floor(Math.random() * todos.length);
+    this.todo = todos[todo];
+    return todo;
+  }
 }
