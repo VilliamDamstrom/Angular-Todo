@@ -25,7 +25,7 @@ Verify the installation by running:
 ng version
 
 1. Clone the Repository
-   git clone
+   git clone https://github.com/VilliamDamstrom/Angular-Todo.git
 
 2. Navigate to the Project Directory
    cd Angular-Todo
