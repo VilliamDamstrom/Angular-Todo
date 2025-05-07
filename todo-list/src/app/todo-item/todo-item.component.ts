@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, EventEmitter, input, Input, output, Output } from '@angular/core';
 
 interface todo {
   id: number;
@@ -16,6 +16,13 @@ interface todo {
 export class TodoItemComponent {
   // @Input() todo!:string;
   // @Input() id!:number;
+  // @Output() doneItem = new EventEmitter<number>();
 
   todo = input.required<todo>();
+  doneItem = output<number>()
+
+  itemDone() {
+    this.doneItem.emit(this.todo().id);
+  }   
+
 }

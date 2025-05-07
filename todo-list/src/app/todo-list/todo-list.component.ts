@@ -11,4 +11,8 @@ import { todos } from '../todos';
 })
 export class TodoListComponent {
   todos = todos.filter(t => !t.done);
+
+  itemDone(id: number) {
+
+  }
 }
