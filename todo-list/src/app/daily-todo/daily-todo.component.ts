@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { todos } from '../todos';
 
 @Component({
@@ -9,11 +9,18 @@ import { todos } from '../todos';
   styleUrl: './daily-todo.component.css'
 })
 export class DailyTodoComponent {
-  todo = todos[this.getNewRandomTodo()];
+    todo = signal(todos[this.getNewRandomTodo()]);
+  //todo = todos[this.getNewRandomTodo()];
 
   getNewRandomTodo() {
     const todo = Math.floor(Math.random() * todos.length);
-    this.todo = todos[todo];
     return todo;
   }
+
+
+  showNewRandomTodo() {
+    const todo = this.getNewRandomTodo();
+    this.todo.set(todos[todo]);
+  }
 }
+
