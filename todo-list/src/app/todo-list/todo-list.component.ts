@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { todos } from '../todos'; 
 
 @Component({
   selector: 'app-todo-list',
@@ -9,5 +10,5 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
   styleUrl: './todo-list.component.css'
 })
 export class TodoListComponent {
-
+  todos = todos;
 }
