@@ -1,5 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { todos } from './todos'; 
+import { todos } from './todos';
 
 // Dependency Injection, one servie we use in all components
 @Injectable({
@@ -10,10 +10,10 @@ export class TodosService {
     todos = signal(todos);
 
     // Computable value, filter value before sending it to the component
-    filteredTodos = computed(() => this.todos().filter(t=> !t.done));
+    filteredTodos = computed(() => this.todos().filter(t => !t.done));
 
     getAllTodos() {
-        return this.todos();
+        return this.filteredTodos;
     }
 
     // Add new todo to the list, array of objects, create new array
@@ -31,7 +31,7 @@ export class TodosService {
     completeTodo(id: number) {
 
         const newTodos = this.todos().map(todo =>
-            todo.id == id ? { ...todo, done: true } : todo
+            todo.id == id ? {...todo, done:true} : todo
           );
       
           this.todos.set(newTodos);
