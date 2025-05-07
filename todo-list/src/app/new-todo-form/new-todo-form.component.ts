@@ -10,4 +10,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class NewTodoFormComponent {
 
+  newTodoInput = "";
+
+  formSubmit(){
+    console.log("Form submit", this.newTodoInput);
+
+    
+  }
 }
