@@ -16,6 +16,10 @@ export class TodoListComponent {
   itemDone(id: number) {
     console.log("Klick på item comp ", id);
 
-    
+    const newTodos = this.todos().map(todo =>
+      todo.id == id ? { ...todo, done: true } : todo
+    ).filter(t => !t.done);
+
+    this.todos.set(newTodos);
   }
 }
