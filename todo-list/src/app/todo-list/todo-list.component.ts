@@ -10,5 +10,5 @@ import { todos } from '../todos';
   styleUrl: './todo-list.component.css'
 })
 export class TodoListComponent {
-  todos = todos;
+  todos = todos.filter(t => !t.done);
 }

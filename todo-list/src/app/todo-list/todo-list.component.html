@@ -1,7 +1,9 @@
 <ul>
     <li><h3>Do this:</h3></li>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li><app-todo-item [todo]="todos[0]" /></li>
+
+    @for (todo of todos; track todo.id ) {
+        <li><app-todo-item [todo]="todo" /></li>
+    }
+
+    
 </ul>
