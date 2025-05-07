@@ -1,5 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { todos } from './todos';
+import { Todo } from './models/todo.model';
 
 // Dependency Injection, one servie we use in all components
 @Injectable({
@@ -18,7 +19,7 @@ export class TodosService {
 
     // Add new todo to the list, array of objects, create new array
     addNewTodo(todo: string) {
-        const newTodo = {
+        const newTodo: Todo = {
             id: this.todos().length + 1,
             todo: todo,
             done: false

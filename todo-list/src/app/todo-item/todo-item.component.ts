@@ -1,10 +1,6 @@
 import { Component, EventEmitter, input, Input, output, Output } from '@angular/core';
+import { Todo } from '../models/todo.model';
 
-interface todo {
-  id: number;
-  todo: string;
-  done: boolean;
-}
 
 @Component({
   selector: 'app-todo-item',
@@ -18,7 +14,7 @@ export class TodoItemComponent {
   // @Input() id!:number;
   // @Output() doneItem = new EventEmitter<number>();
 
-  todo = input.required<todo>();
+  todo = input.required<Todo>();
   doneItem = output<number>()
 
   itemDone() {
